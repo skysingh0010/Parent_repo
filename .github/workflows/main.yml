@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Set up Git
         run: |
-          git config --global user.email "test.sky0010@gmail.com"
+          git config --global user.email "test.sky0010.com"
           git config --global user.name "SkySingh0010"
 
       - name: Checkout code
@@ -22,5 +22,5 @@ jobs:
         run: |
           git submodule update --remote
           git add .
-          git commit -m "Update submodule with changes from template repository"
+          git diff-index --quiet HEAD || git commit -m "Update submodule with changes from template repository"
           git push
