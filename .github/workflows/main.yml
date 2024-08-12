@@ -18,12 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-     - name: Update Submodule
-       run: |
-         git config --global credential.helper store
-         git config --global user.email "you@example.com"
-         git config --global user.name "Your Name"
-         git submodule update --remote
-         cd submodule_directory
-         git config http.extraheader "AUTHORIZATION: token ${{ secrets.new_sec }}"
-         git pull
+      - name: Update Submodule
+        run: |
+           git config --global credential.helper store
+           git config --global user.email "you@example.com"
+           git config --global user.name "Your Name"
+           git submodule update --remote
+           cd submodule_directory
+           git config http.extraheader "AUTHORIZATION: token ${{ secrets.new_sec }}"
+           git pull
