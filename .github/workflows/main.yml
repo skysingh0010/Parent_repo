@@ -3,13 +3,18 @@ name: Update Child Repositories
 on:
   push:
     branches:
-      - main  # Trigger the workflow on pushes to the main branch of the template repository
+      - main
 
 jobs:
   update_repos:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set up Git
+        run: |
+          git config --global user.email "test.sky0010@gmail.com"
+          git config --global user.name "SkySingh0010"
+
       - name: Checkout code
         uses: actions/checkout@v2
 
